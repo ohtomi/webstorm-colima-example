@@ -22,15 +22,16 @@
 1. WebStormにColimaを認識させる
    - `Preferences > Build, Execution, Deployment > Docker`
      - 左上にある `+` ボタンをタップして、Colimaを選ぶ
-     - <img src="docs/preferences-docker.png" alt="" width="600">
+       - <img src="docs/preferences-docker.png" alt="" width="600">
 1. WebStormにコンテナーのNode.jsを認識させる
    - `Preferences > Languages & Frameworks > JavaScript Runtime`
-   - 中段右側にある `...` ボタンをタップして、`Node.js Runtimes` ダイアログを開く
-   - <img src="docs/preferences-add-remote.png" alt="" width="300">
-   - 左上にある `+` ボタンから `Add Remote...` を選んで、`Configure Node.js Remote Runtime` ダイアログを開く
-   - <img src="docs/preferences-configure-remote.png" alt="" width="300">
-   - `Docker Compose` を選び、`./compose.yml` を指定して、`app` サービスを選ぶ
-   - <img src="docs/preferences-javascript-runtime.png" alt="" width="600">
+     - 中段右側にある `...` ボタンをタップして、`Node.js Runtimes` ダイアログを開く
+        - <img src="docs/preferences-add-remote.png" alt="" width="400">
+     - 左上にある `+` ボタンから `Add Remote...` を選んで、`Configure Node.js Remote Runtime` ダイアログを開く
+     - `Docker Compose` を選び、`./compose.yml` を指定して、`app` サービスを選ぶ
+        - <img src="docs/preferences-configure-remote.png" alt="" width="400">
+     - 設定画面に戻ったとき `Node runtime` に追加したリモートランタイムになっていることを確かめる
+       - <img src="docs/preferences-javascript-runtime.png" alt="" width="600">
 1. npmパッケージをインストールする
    ```zsh
    npm ci
@@ -41,7 +42,7 @@
    ```
 
 > [!NOTE]
-> WebStormのターミナルからnpmパッケージをインストールすると、ホスト環境へインストールされてしまう
+> WebStormのターミナルからnpmパッケージをインストールすると、ホスト環境へインストールされてしまう  
 > そのため、Servicesタブからappサービスへ接続するか、WebStormの実行構成を設定してnpmコマンドを実行する必要がある
 
 > [!NOTE]
