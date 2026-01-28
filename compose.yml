@@ -5,6 +5,7 @@ services:
       NODE_ENV: development
     ports:
       - "${MY_LOCAL_APP_PORT:-5173}:5173"
+      - "${MY_LOCAL_STORYBOOK_PORT:-6006}:6006"
     volumes:
       # ソースコードをリアルタイムに共有する
       - .:/app
