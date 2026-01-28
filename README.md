@@ -46,7 +46,7 @@
 > そのため、Servicesタブからappサービスへ接続するか、WebStormの実行構成を設定してnpmコマンドを実行する必要がある
 
 > [!NOTE]
-> SvelteKitサーバーを実行するとき、WebStormの実行構成で `Docker Compose` の `Command and options` を `exec` と設定する必要がある
+> SvelteKitサーバーを実行するとき、WebStormの実行構成で `Docker Compose` の `Command and options` を `exec` と設定する必要がある  
 > <img src="docs/run-configurations-npm-run-dev.png" alt="" width="600">
 
 ## プロジェクト構成
