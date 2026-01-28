@@ -1,0 +1,24 @@
+services:
+  app:
+    image: node:24-bookworm
+    environment:
+      NODE_ENV: development
+    ports:
+      - "${MY_LOCAL_APP_PORT:-5173}:5173"
+    volumes:
+      # ソースコードをリアルタイムに共有する
+      - .:/app
+      # npmパッケージ node_modules/ を名前付きボリュームに保持してホストと共有しない
+      - webstorm_colima_example_npm_cache:/app/node_modules
+    working_dir: /app
+    command:
+      - sh
+      - -c
+      - |
+        sleep infinity
+    tty: true
+    stdin_open: true
+    restart: always
+
+volumes:
+  webstorm_colima_example_npm_cache:
