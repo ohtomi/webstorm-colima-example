@@ -3,6 +3,7 @@ services:
     image: node:24-bookworm
     environment:
       NODE_ENV: development
+      PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
     ports:
       - "${MY_LOCAL_APP_PORT:-5173}:5173"
       - "${MY_LOCAL_STORYBOOK_PORT:-6006}:6006"
@@ -11,6 +12,8 @@ services:
       - .:/app
       # npmパッケージ node_modules/ を名前付きボリュームに保持してホストと共有しない
       - webstorm_colima_example_npm_cache:/app/node_modules
+      # Playwrightが利用するウェブブラウザー ms-playwright/ を名前付きボリュームに保持してホストと共有しない
+      - webstorm_colima_example_playwright_cache:/ms-playwright
     working_dir: /app
     command:
       - sh
@@ -23,3 +26,4 @@ services:
 
 volumes:
   webstorm_colima_example_npm_cache:
+  webstorm_colima_example_playwright_cache:
