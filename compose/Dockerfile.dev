@@ -1,0 +1,8 @@
+FROM node:24-bookworm
+
+WORKDIR /app
+
+# Playwright の OS 依存を先に入れる
+RUN npx playwright install-deps
+
+# 開発用なので ENTRYPOINT は持たせない

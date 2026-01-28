@@ -1,6 +1,8 @@
 services:
   app:
-    image: node:24-bookworm
+    build:
+      context: .
+      dockerfile: compose/Dockerfile.dev
     environment:
       NODE_ENV: development
       PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
